@@ -32,7 +32,11 @@
                 return;
             }
 
-            messageEl.textContent = 'mày đã sống chật đất tận ' + age + ' năm trên cõi đời này rồi';
+            if (age === 36) {
+                messageEl.textContent = 'mày sống đủ lâu để thành người Thanh Hoá';
+            } else {
+                messageEl.textContent = 'mày đã sống chật đất tận ' + age + ' năm trên cõi đời này rồi';
+            }
             messageEl.style.color = 'green';
         });
     </script>
