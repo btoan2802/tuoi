@@ -25,9 +25,21 @@
                 return;
             }
 
-            const age = Number(ageValue);
+            const age = Number(ageValue.replace(',', '.'));
             if (!Number.isFinite(age) || age <= 0) {
-                messageEl.textContent = 'Vui lòng nhập một số tuổi hợp lệ.';
+                messageEl.textContent = 'Vui lòng nhập vào tuổi của mày.';
+                messageEl.style.color = 'red';
+                return;
+            }
+
+            if (!Number.isInteger(age)) {
+                messageEl.textContent = 'mày là người âm à';
+                messageEl.style.color = 'red';
+                return;
+            }
+
+            if (age > 110) {
+                messageEl.textContent = 'làm đéo gì có ai sống lâu thế';
                 messageEl.style.color = 'red';
                 return;
             }
